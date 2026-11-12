@@ -18,17 +18,19 @@ spring:
   cloud:
     nacos:
       # nacos 服务地址
-      server-addr: @nacos.server@
-      username: @nacos.username@
-      password: @nacos.password@
+      server-addr: 192.168.220.155:38848
+      username: nacos
+      password: nacos
       discovery:
         # 注册组
         group: DEFAULT_GROUP
-        namespace: public
+        namespace: 4a92d3e0-1fcb-43a6-af08-2067e42a6fe9
       config:
         # 配置组
         group: DEFAULT_GROUP
-        namespace: public
+        namespace: 4a92d3e0-1fcb-43a6-af08-2067e42a6fe9
+        username: nacos
+        password: nacos
   config:
     import:
       - optional:nacos:application-common.yml
