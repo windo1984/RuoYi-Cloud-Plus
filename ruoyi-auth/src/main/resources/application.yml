@@ -1,6 +1,6 @@
 # Tomcat
 server:
-  port: 9210
+  port: 19210
 
 # Spring
 spring:
@@ -16,17 +16,19 @@ spring:
   cloud:
     nacos:
       # nacos 服务地址
-      server-addr: @nacos.server@
-      username: @nacos.username@
-      password: @nacos.password@
+      server-addr: 192.168.101.5:38848
+      username: nacos
+      password: nacos
       discovery:
         # 注册组
         group: DEFAULT_GROUP
-        namespace: public
+        namespace: public_fighter
       config:
         # 配置组
         group: DEFAULT_GROUP
-        namespace: public
+        namespace: public_fighter
+        username: nacos
+        password: nacos
   config:
     import:
       - optional:nacos:application-common.yml
