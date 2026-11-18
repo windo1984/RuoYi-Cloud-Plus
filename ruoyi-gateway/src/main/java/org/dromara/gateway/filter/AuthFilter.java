@@ -53,16 +53,16 @@ public class AuthFilter {
 
                     StpUtil.checkLogin();
 
-                    String headerCid = request.getHeader(LoginHelper.CLIENT_KEY);
-                    String paramCid = ServletUtils.getParameter(LoginHelper.CLIENT_KEY);
-                    Object extra = StpUtil.getExtra(LoginHelper.CLIENT_KEY);
-                    String clientId = extra == null ? null : extra.toString();
-                    if (!StringUtils.equalsAny(clientId, headerCid, paramCid)) {
-                        throw NotLoginException.newInstance(StpUtil.getLoginType(),
-                            "-100", "客户端ID与Token不匹配",
-                            StpUtil.getTokenValue());
-                    }
-                    validateClientAccessRules(request);
+//                    String headerCid = request.getHeader(LoginHelper.CLIENT_KEY);
+//                    String paramCid = ServletUtils.getParameter(LoginHelper.CLIENT_KEY);
+//                    Object extra = StpUtil.getExtra(LoginHelper.CLIENT_KEY);
+//                    String clientId = extra == null ? null : extra.toString();
+//                    if (!StringUtils.equalsAny(clientId, headerCid, paramCid)) {
+//                        throw NotLoginException.newInstance(StpUtil.getLoginType(),
+//                            "-100", "客户端ID与Token不匹配",
+//                            StpUtil.getTokenValue());
+//                    }
+//                    validateClientAccessRules(request);
                 }))
             .setError(e -> {
                 HttpServletResponse response = ServletUtils.getResponse();
